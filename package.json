@@ -10,7 +10,7 @@
     "test": "karma start",
     "e2e": "codeceptjs run --steps",
     "build-image": "node sharp.js",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src"
   },
   "keywords": [],
   "author": "",
