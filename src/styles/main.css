@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  padding: 15px 0;
+}
+
+a {
+  text-decoration: none;
+}
+/* nav */
+nav {
+  background-color: #1C6758;
+  height: 80px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.title {
+  display: inline-block;
+  color: #EEF2E6;
+  line-height: 80px;
+  margin-left: 40px;
+  flex-grow: 1;
+}
+
+ul {
+  margin-right: 40px;
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+  line-height: 80px;
+}
+
+ul li a {
+  color: #EEF2E6;
+  text-decoration: none;
+  padding: 15px;
+  transition: .3s;
+  border-radius: 10px;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+nav a:hover {
+  background-color: #3D8361;
+}
+
+#hamburger {
+  color: #EEF2E6;
+  font-size: 20px;
+  display: none;
+  min-height: 44px;
+  padding: 30px;
+  transition: .3s;
+}
+/* hero */
+.hero-inner img{
+  width: 100%;
+  filter: brightness(0.6);
+  height: 700px;
+  object-fit: cover;
+}
+
+.hero-inner {
+  position: relative;
+  text-align: center;
+}
+
+.hero-inner .text-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #EEF2E6;
+  font-weight: 600;
+}
+
+/* main */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background-color: #1C6758;
+  color: white;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+main {
+  background-color: #EEF2E6;
+}
+
+.content-header{
+  text-align: center;
+  padding: 30px;
+  font-size: 25px;
+  color: #1C6758;
+}
+
+.sub-header {
+  font-size: 25px;
+  color: #1C6758;
+  margin-bottom: 10px;
+}
+
+/* loader */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #1C6758;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 10% auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* content restaurant list */
+.card {
+  border-radius: 20px;
+  box-shadow: 3px 7px 16px -4px rgba(0,0,0,0.7);
+}
+
+.restaurant-item__not__found {
+  color: #1C6758;
+  font-size: 50px;
+  text-align: center;
+  padding: 30px;
+}
+.restaurant-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+/* restaurant item */
+
+.restaurant-item {
+  position: relative;
+  background-color: #1C6758;
+  border-radius: 20px;
+  box-shadow: 3px 7px 16px -4px rgba(0,0,0,0.7);
+  margin: 10%;
+}
+.restaurant-item img{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.info {
+  color: #EEF2E6;
+  padding: 15px;
+}
+.city {
+  position: absolute;
+  top: 0;
+  margin-top: 10px;
+  padding: 10px;
+  color: #1C6758;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #D6CDA4;
+  box-shadow: -1px 7px 19px -4px rgba(0,0,0,0.7);
+}
+.rating {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.rating .angka-rating {
+  background-color: #3D8361;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+  box-shadow: 2px 9px 30px -9px rgba(0,0,0,0.64);
+}
+
+.restaurant-item h3 a{
+  color: #D6CDA4;
+  text-decoration: none;
+}
+
+.restaurant-item h3 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.desc {
+  line-height: 25px;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.green {
+  color: lightgreen;
+}
+.orange {
+  color: orange;
+}
+.red {
+  color: red;
+}
+/* restaurant detail */
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+.page {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+}
+.restaurant {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.restaurant__info {
+  padding: 0 30px;
+  line-height: 30px;
+}
+
+.restaurant .restaurant__desc h4 {
+  margin: 8px 0;
+}
+
+.restaurant__desc {
+  padding: 20px;
+}
+
+/* menus */
+.menu {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.menu-item-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.makanan, .minuman {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 15px;
+}
+
+
+.food-item {
+  word-wrap: break-word;
+  max-width: 180px;
+}
+/* review */
+.review-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+}
+.review-box {
+  padding: 20px;
+  line-height: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: 700px;
+  overflow-y: scroll;
+}
+
+.review-item {
+  padding: 10px;
+  margin-top: 20px;
+}
+.name {
+  font-size: 20px;
+}
+
+.date {
+  color: #aaaaaa;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #aaaaaa;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1C6758;
+  border-radius: 12px;
+}
+
+.form {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.label-input {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 30px;
+}
+
+.label-input input{
+  border: 2px solid #1C6758;
+  border-radius: 5px;
+  padding: 5px;
+}
+.review-btn {
+  border: none;
+  background-color: #1C6758;
+  color: #EEF2E6;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.review-btn:hover {
+  background-color: #3D8361;
+}
+
+/* footer */
+
+footer {
+  padding: 16px;
+  background-color: #1C6758;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #EEF2E6;
+  text-decoration: none;
+  padding: 12px 0;
+}
