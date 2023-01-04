@@ -202,12 +202,10 @@ main {
 .restaurant-item h3 a{
   color: #D6CDA4;
   text-decoration: none;
+  font-size: 25px;
+  padding: 20px 0;
 }
 
-.restaurant-item h3 {
-  font-size: 25px;
-  margin: 20px 0;
-}
 .desc {
   line-height: 25px;
   max-height: 200px;
@@ -361,6 +359,7 @@ main {
   border: 2px solid #1C6758;
   border-radius: 5px;
   padding: 5px;
+  min-height: 44px;
 }
 .review-btn {
   border: none;
